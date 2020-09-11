@@ -15,7 +15,7 @@
 
     <div class="col-12 border p-3 mt-3">
         <form method="post">
-            @if (Model.Books.Count() > 0)
+            @if (Model !=null && Model.Books !=null  && Model.Books.Any())
             {
                 <table class="table table-striped border">
                     <tr class="table-secondary">
