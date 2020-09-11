@@ -28,7 +28,7 @@ namespace BookListRazor.Pages.BookList
          }
          catch (Exception e)
          {
-            Console.WriteLine($"The file could not be opened: '{e}'");
+            Console.WriteLine($"Exception at OnGet, when calling _db.Book.ToListAsync(), exception message: '{e.Message}'");
          }
       }
 
