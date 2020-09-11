@@ -22,7 +22,14 @@ namespace BookListRazor.Pages.BookList
 
       public async Task OnGet()
       {
-         Books = await _db.Book.ToListAsync();
+         try
+         {
+            Books = await _db.Book.ToListAsync();
+         }
+         catch (Exception e)
+         {
+            Console.WriteLine($"The file could not be opened: '{e}'");
+         }
       }
 
       public async Task<IActionResult> OnPostDelete(int id)
